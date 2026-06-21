@@ -233,7 +233,7 @@ The chatbot currently provides responses based on predefined educational informa
 
 ## Database
 
-* Microsoft SQL Server
+* MySQL (XAMPP / phpMyAdmin)
 
 ---
 
@@ -242,7 +242,6 @@ The chatbot currently provides responses based on predefined educational informa
 ## Frontend Setup
 
 ```bash
-cd frontend
 npm install
 npm start
 ```
@@ -250,16 +249,45 @@ npm start
 ## Backend Setup
 
 ```bash
-cd backend
-npm install
-npm start
+cd backend 
+python -m venv venv 
+venv\Scripts\activate 
+pip install -r requirements.txt 
+uvicorn app.main:app --reload
 ```
 
 ## Database Setup
 
-Configure your SQL Server connection settings in the backend configuration file before running the application.
+1. Open XAMPP Control Panel
+2. Start:
+Apache
+MySQL
+
+3. Open phpMyAdmin:
+
+http://localhost/phpmyadmin
+
+4. Create database:
+
+edumanager
+
+5. Import SQL file
+
+/Backend/create_tables
 
 ---
+
+## Database Setup
+
+## Start Backend
+cd backend
+
+venv\Scripts\activate
+
+uvicorn app.main:app --reload
+
+## Start Frontend
+npm run dev
 
 # 📈 Future Enhancements
 
